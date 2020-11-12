@@ -4,9 +4,9 @@ if(isset($_POST['logout'])){
 session_start();
 session_unset();
 session_destroy();
-    unset($_SESSION["Username"]);
-    unset($_SESSION["Parola"]);
-    $_SESSION['valid'] = false;
-header("location:Autentificare-administrator.html");
+    unset($_SESSION["username"]);
+
+    $_SESSION['logged-in'] = false;
+header("location:Autentificare.php");
 exit();}
 ?>

@@ -1,7 +1,7 @@
 
 <?php
 include_once 'Conectare_baza_de_date.php';
-
+session_start();
 ?>
 <!DOCTYPE html>
 <!--
@@ -39,14 +39,13 @@ include_once 'Conectare_baza_de_date.php';
             <h1><a href="index.php">BlueJEANS</a></h1>
 
         </div>
-
         <nav id="nav">
             <ul>
-                <li ><a href="index.php">Meniu</a></li>
-                <li><a href="Evenimente-speciale.php">Evenimente speciale</a></li>
+                <li class="active"><a href="Meniu_client.php">Meniu</a></li>
+                <li><a href="Evenimente-speciale_client.php">Evenimente speciale</a></li>
                 <li><a href="Contact.html">Contact</a></li>
                 <li><a href="Parerea-dumnevoastra.html">Părerea dumneavoastră</a></li>
-                <li><a href="Autentificare.php">Autentificare</a></li>
+                <li><a href="Logout.html">Logout</a></li>
             </ul>
         </nav>
     </div>
@@ -56,71 +55,56 @@ include_once 'Conectare_baza_de_date.php';
 
     <div id="banner" class="container">
         <section>
-            <p>Restaurantul<strong> BlueJEANS</strong>, evenimente speciale</p>
+            <p>Restaurantul<strong> BlueJEANS</strong>, mâncare delicioasă pentru o lume într-o continuă schimbare</p>
         </section>
     </div>
     <div id="extra">
         <div class="container">
             <div class='row no-collapse-1'>
-
                 <?php
-                $pass='';
-                $dbname='restaurant';
-
-                $user='root';
-                $conn=mysqli_connect('localhost',$user,$pass,$dbname);
-
-                $sql ="SELECT * FROM evenimente";
+                $sql ="SELECT * FROM meniu";
                 $result = mysqli_query($conn,$sql);
                 $resultCheck=mysqli_num_rows($result);
                 $i=0;
 
                 if($resultCheck>0)
-                while($row=mysqli_fetch_assoc($result)) {
-                if($i==3){
-                $i=0;
+                    while($row=mysqli_fetch_assoc($result)) {
+                        if($i==3){
+                            $i=0;
 
-                echo "<div class='row no-collapse-1'>";
-                }
-                 {
-                $image = $row['poza'];
-                $image_src = "upload/".$image;
-                echo"
-                <section class='4u'> <a href='#' class='image featured'><img src='";
+                            echo "<div class='row no-collapse-1'>";
+                        }
+                        {
+                            $image = $row['poza'];
+                            $image_src = "upload/".$image;
+                            echo"  
+                                    <section class='4u'> <a href='#' class='image featured'><img src='";
                             echo $image_src;  echo"'></a>";
-                    echo"
-                    <div class='box'>
-
-                        ";
-                        echo $row['denumire'];
-                        echo"</p>
-                        <p>
-                            ";
+                            echo"
+                                        <div class='box'>
+                                           
+                                            ";
+                            echo $row['denumire'];
+                            echo"</p> 
+                                  <p>
+                                            ";
                             echo $row['descriere'];
 
-                            echo"</p> <p>
-                             Data:"; echo  $row['data'];
-                             echo"</p><p>Numar locuri disponibile: ";
-                             echo $row['numar_locuri'];
-                     echo "<br><br><a href=\"rezervare_locuri.php?id=".$row['id']."\" class='button'>Rezerva</a>
+                            echo"</p>
+                                    <a href='#' class='button'>Adauga in cos</a> </div>";
 
+                           /* if(!isset($_SESSION['logged-in']) ) echo $_SESSION["username"]; */
+                            echo "
+                            </section>";
+                            $i++;
+                            if($i==3) echo "</div>";
 
-
-
-                </section>";
-                $i++;
-                if($i==3) echo "</div>";
-
-                }
-                }
+                        }
+                    }
 
                 ?>
             </div>
         </div>
-
-
-
-
 
 
 
