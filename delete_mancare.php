@@ -12,7 +12,7 @@ $id = $_GET['id']; // $id is now defined
 
 mysqli_query($conn,"DELETE FROM meniu WHERE id='".$id."'");
 mysqli_close($conn);
-header("Location: PaginaAdministrator.php");
+header("Location: Meniu_admin.php");
 ?>
 <html>
 

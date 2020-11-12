@@ -31,15 +31,15 @@
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed">
 						<div id="logo">
-							<h1><a href="PaginaAdministrator.php">BlueJEANS</a></h1>
+							<h1><a href="Meniu_admin.php">BlueJEANS</a></h1>
 						
 						</div>
 						<nav id="nav">
 							<ul>
-								<li class="active"><a href="PaginaAdministrator.php">Meniu</a></li>
+								<li class="active"><a href="Meniu_admin.php">Meniu</a></li>
 								<li><a href="Evenimente-speciale_admin.php">Evenimente speciale</a></li>
 								<li><a href="Contact_admin.html">Contact</a></li>
-								<li><a href="no-sidebar.html">Părerea dumneavoastră</a></li>
+								<li><a href="Parerea-dumneavoastra-_admin">Părerea dumneavoastră</a></li>
 								<li><a href="Logout.html">Logout</a></li>
 								
 							</ul>

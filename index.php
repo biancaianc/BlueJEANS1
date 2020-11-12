@@ -41,9 +41,9 @@ include_once 'Conectare_baza_de_date.php';
 						<nav id="nav">
 							<ul>
 								<li class="active"><a href="index.php">Meniu</a></li>
-								<li><a href="Evenimente-speciale.php">Evenimente speciale</a></li>
-								<li><a href="Contact.html">Contact</a></li>
-								<li><a href="Parerea-dumnevoastra.html">Părerea dumneavoastră</a></li>
+								<li><a href="Evenimente-speciale_vizitator.php">Evenimente speciale</a></li>
+								<li><a href="Contact_vizitator.html">Contact</a></li>
+								<li><a href="Parerea-dumnevoastra_vizitator.html">Păreri</a></li>
 								<li><a href="Autentificare.php">Autentificare</a></li>
 							</ul>
 						</nav>
@@ -90,7 +90,7 @@ include_once 'Conectare_baza_de_date.php';
                             echo $row['descriere'];
 
                             echo"</p>
-                                    <a href='#' class='button'>Read More</a> </div>
+                                 
 
                             </section>";
                              $i++;

@@ -71,7 +71,7 @@ if (isset($_POST['adauga'])&&(isset($_FILES['file'])) &&isset($_POST['denumire']
     <!-- Header -->
     <div id="header" class="skel-panels-fixed">
         <div id="logo">
-            <h1><a href="PaginaAdministrator.php">Back</a></h1>
+            <h1><a href="Meniu_admin.php">Back</a></h1>
 </div>
     </div>
 

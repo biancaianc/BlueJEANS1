@@ -1,6 +1,7 @@
 
 <?php
 include_once 'Conectare_baza_de_date.php';
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -35,15 +36,16 @@ include_once 'Conectare_baza_de_date.php';
     <!-- Header -->
     <div id="header" class="skel-panels-fixed">
         <div id="logo">
-            <h1><a href="Meniu_admin.php">BlueJEANS</a></h1>
+            <h1><a href="index.php">BlueJEANS</a></h1>
 
         </div>
+
         <nav id="nav">
             <ul>
-                <li ><a href="Meniu_admin.php">Meniu</a></li>
-                <li><a href="Evenimente-speciale_admin.php">Evenimente speciale</a></li>
-                <li><a href="Contact_admin.html">Contact</a></li>
-                <li><a href="Parerea-dumnevoastra_admin.html">Părerea dumneavoastră</a></li>
+                <li ><a href="Meniu_client.php">Meniu</a></li>
+                <li><a href="Evenimente-speciale_client.php">Evenimente speciale</a></li>
+                <li><a href="Contact_client.html">Contact</a></li>
+                <li><a href="Parerea-dumnevoastra_client.html">Părerea dumneavoastră</a></li>
                 <li><a href="Logout.html">Logout</a></li>
             </ul>
         </nav>
@@ -54,19 +56,9 @@ include_once 'Conectare_baza_de_date.php';
 
     <div id="banner" class="container">
         <section>
-            <p>Restaurantul<strong> BlueJEANS</strong>, evenimente speciale-pagina de administrator</p>
+            <p>Restaurantul<strong> BlueJEANS</strong>, evenimente speciale</p>
         </section>
     </div>
-    <form action="Adaugare_eveniment.php" method="post">
-        <input font size="6" color=00000  name="adauga_eveniment" type="submit" value="ADAUGA eveniment" ></font>
-
-    </form>
-    <form action="Cereri_rezervari.php" method="post">
-        <br><br>
-        <input font size="6" color=00000  name="cereri_rezervari" type="submit" value="Cereri rezervari" ></font>
-    </form>
-
-    <br><br>
     <div id="extra">
         <div class="container">
             <div class='row no-collapse-1'>
@@ -90,7 +82,7 @@ include_once 'Conectare_baza_de_date.php';
 
                             echo "<div class='row no-collapse-1'>";
                         }
-                         {
+                        {
                             $image = $row['poza'];
                             $image_src = "upload/".$image;
                             echo"
@@ -110,8 +102,9 @@ include_once 'Conectare_baza_de_date.php';
                              Data:"; echo  $row['data'];
                             echo"</p><p>Numar locuri disponibile: ";
                             echo $row['numar_locuri'];
-                            echo "<a href=\"delete_evenimente.php?id=".$row['id']."\" class='button'>Delete</a>
-    
+                            echo "<br><br><a href=\"rezervare_locuri.php?id=".$row['id']."\" class='button'>Rezerva</a>
+
+
 
 
                 </section>";
@@ -124,26 +117,11 @@ include_once 'Conectare_baza_de_date.php';
                 ?>
             </div>
         </div>
-<?php
 
-function sterge($row){
-    $pass='';
-    $dbname='restaurant';
 
-    $user='root';
-    $conn=mysqli_connect('localhost',$user,$pass,$dbname);
 
-    if(isset($POST['sterge'])) {
-        $sql = " delete from evenimente where denumire='" + $row['denumire'];
-        if ($conn->query($sql) === TRUE) {
-            echo "Record deleted successfully";
-        } else {
-            echo "Error deleting record: " . $conn->error;
-        }
-    }
-}
 
-?>
+
 
 
 

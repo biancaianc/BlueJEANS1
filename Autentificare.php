@@ -20,7 +20,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
         $_POST['parola'] == $PAROLA) {
         $_SESSION['username'] = $USERNAME;
         $_SESSION["logged_in"] = true;
-        header('Location:PaginaAdministrator.php');
+        header('Location:Meniu_admin.php');
 
     }else
         {
@@ -88,7 +88,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 						<nav id="nav">
 							<ul>
 								<li class="active"><a href="index.php">Meniu</a></li>
-								<li><a href="Evenimente-speciale.php">Evenimente speciale</a></li>
+								<li><a href="Evenimente-speciale_vizitator.php">Evenimente speciale</a></li>
 								<li><a href="Contact.html">Contact</a></li>
 								<li><a href="Parerea-dumnevoastra.html">Părerea dumneavoastră</a></li>
 								<li><a href="Autentificare.php">Autentificare</a></li>

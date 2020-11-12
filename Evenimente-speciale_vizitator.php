@@ -43,9 +43,9 @@ include_once 'Conectare_baza_de_date.php';
         <nav id="nav">
             <ul>
                 <li ><a href="index.php">Meniu</a></li>
-                <li><a href="Evenimente-speciale.php">Evenimente speciale</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Parerea-dumnevoastra.html">Părerea dumneavoastră</a></li>
+                <li><a href="Evenimente-speciale_vizitator.php">Evenimente speciale</a></li>
+                <li><a href="Contact_vizitator.html">Contact</a></li>
+                <li><a href="Parerea-dumnevoastra_vizitator.html">Părerea dumneavoastră</a></li>
                 <li><a href="Autentificare.php">Autentificare</a></li>
             </ul>
         </nav>
@@ -102,7 +102,7 @@ include_once 'Conectare_baza_de_date.php';
                              Data:"; echo  $row['data'];
                              echo"</p><p>Numar locuri disponibile: ";
                              echo $row['numar_locuri'];
-                     echo "<br><br><a href=\"rezervare_locuri.php?id=".$row['id']."\" class='button'>Rezerva</a>
+                     echo "
 
 
 
