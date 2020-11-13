@@ -2,6 +2,11 @@
 <?php
 include_once 'Conectare_baza_de_date.php';
 
+$pass='';
+$dbname='restaurant';
+
+$user='root';
+$conn=mysqli_connect('localhost',$user,$pass,$dbname);
 ?>
 <!DOCTYPE html>
 <!--
@@ -104,9 +109,6 @@ include_once 'Conectare_baza_de_date.php';
                             echo"</p><p>Numar locuri disponibile: ";
                             echo $row['numar_locuri'];
                             echo "<br><br><a href=\"rezervare_locuri.php?id=".$row['id']."\" class='button'>Rezerva</a>
-
-
-
 
                 </section>";
                             $i++;

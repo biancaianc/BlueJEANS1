@@ -36,6 +36,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
                 $hash=password_hash($row['parola'],PASSWORD_DEFAULT);
                 if (password_verify($_POST['parola'],$hash)) {
                     $_SESSION["username"] = $user;
+                    $_SESSION["id_client"]=$row['id'];
                     $_SESSION["logged_in"] = true;
                     header('Location:Meniu_client.php');
 
@@ -90,7 +91,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 								<li class="active"><a href="index.php">Meniu</a></li>
 								<li><a href="Evenimente-speciale_vizitator.php">Evenimente speciale</a></li>
 								<li><a href="Contact_vizitator.html">Contact</a></li>
-								<li><a href="Parerea-dumnevoastra.html">Părerea dumneavoastră</a></li>
+								<li><a href="Parereri.html">Păreri</a></li>
 								<li><a href="Autentificare.php">Autentificare</a></li>
 							</ul>
 						</nav>

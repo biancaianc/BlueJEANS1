@@ -93,7 +93,8 @@ session_start();
                             echo $row['descriere'];
 
                             echo"</p>
-                                    <a href='#' class='button'>Adauga in cos</a> </div>";
+                                   
+                            <a href=\"adaugare_cos.php?id=".$row['id']."\" class='button'>Adauga in cos</a><div>";
 
                            /* if(!isset($_SESSION['logged-in']) ) echo $_SESSION["username"]; */
                             echo "
