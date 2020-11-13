@@ -40,7 +40,7 @@
 								<li><a href="Evenimente-speciale_admin.php">Evenimente speciale</a></li>
 								<li><a href="Contact_admin.html">Contact</a></li>
 								<li><a href="Parerea-dumneavoastra-_admin">Părerea dumneavoastră</a></li>
-								<li><a href="Logout.html">Logout</a></li>
+								<li><a href="Logout_admin.html">Logout</a></li>
 								
 							</ul>
 						</nav>

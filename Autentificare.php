@@ -89,7 +89,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 							<ul>
 								<li class="active"><a href="index.php">Meniu</a></li>
 								<li><a href="Evenimente-speciale_vizitator.php">Evenimente speciale</a></li>
-								<li><a href="Contact.html">Contact</a></li>
+								<li><a href="Contact_vizitator.html">Contact</a></li>
 								<li><a href="Parerea-dumnevoastra.html">Părerea dumneavoastră</a></li>
 								<li><a href="Autentificare.php">Autentificare</a></li>
 							</ul>

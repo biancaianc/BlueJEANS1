@@ -36,7 +36,7 @@ include_once 'Conectare_baza_de_date.php';
     <!-- Header -->
     <div id="header" class="skel-panels-fixed">
         <div id="logo">
-            <h1><a href="index.php">BlueJEANS</a></h1>
+            <h1><a href="Meniu_client.php">BlueJEANS</a></h1>
 
         </div>
 
@@ -46,7 +46,8 @@ include_once 'Conectare_baza_de_date.php';
                 <li><a href="Evenimente-speciale_client.php">Evenimente speciale</a></li>
                 <li><a href="Contact_client.html">Contact</a></li>
                 <li><a href="Parerea-dumnevoastra_client.html">Părerea dumneavoastră</a></li>
-                <li><a href="Logout.html">Logout</a></li>
+                <li><a href="Cos_client.php">Cos</a></li>
+                <li><a href="Logout_client.html">Logout</a></li>
             </ul>
         </nav>
     </div>

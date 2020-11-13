@@ -44,7 +44,7 @@ include_once 'Conectare_baza_de_date.php';
                 <li><a href="Evenimente-speciale_admin.php">Evenimente speciale</a></li>
                 <li><a href="Contact_admin.html">Contact</a></li>
                 <li><a href="Parerea-dumnevoastra_admin.html">Părerea dumneavoastră</a></li>
-                <li><a href="Logout.html">Logout</a></li>
+                <li><a href="Logout_admin.html">Logout</a></li>
             </ul>
         </nav>
     </div>
