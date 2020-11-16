@@ -88,9 +88,8 @@ $conn=mysqli_connect('localhost',$user,$pass,$dbname);
                 $sql="SELECT * from meniu where id='$id_produs'";
                 $result1 = mysqli_query($conn,$sql);
                 $row1=mysqli_fetch_assoc($result1);
-                $image = $row1["poza"];
-                $image_src = "upload/".$image;
-                echo" <tr align='center'><td>".$row["id"]."</td><td>".$row1["denumire"]."</td><td>   <button>Sterge</button></td></tr> ";
+                if($row1!=NULL){
+                echo" <tr align='center'><td>".$row["id"]."</td><td>".$row1["denumire"]."</td><td>   <a button href=\"delete_cos.php?id=".$row['id']."\" >Sterge</button></a></td></tr> "; }
             }
 
         ?>

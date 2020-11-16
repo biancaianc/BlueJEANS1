@@ -5,7 +5,6 @@ $dbname='restaurant';
 $user='root';
 $conn=mysqli_connect('localhost',$user,$pass,$dbname);
 
-
 ?>
 <html>
 <head>
@@ -79,6 +78,7 @@ $sql="SELECT id, id_eveniment, nume, numar_locuri, numar_telefon from cereri_eve
 
     if($resultCheck>0)
     while($row=mysqli_fetch_assoc($result)) {
+
         echo" <tr><td>".$row["id"]."</td><td>".$row["id_eveniment"]."</td><td>".$row["nume"]."</td><td>".$row["numar_locuri"]."</td><td>".$row["numar_telefon"]."</td><td><button>Accepta</button>       <button>Respinge</button></td></tr> ";
     }
 

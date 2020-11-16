@@ -1,9 +1,4 @@
-<!DOCTYPE HTML>
-<!--
-	Phase Shift by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
 <?php
 
 $pass='';
@@ -11,11 +6,11 @@ $dbname='restaurant';
 
 $user='root';
 $conn=mysqli_connect('localhost',$user,$pass,$dbname);
-    session_start();
+session_start();
 $USERNAME="admin";
 $PAROLA="admin";
 
-if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola']) && !isset($S_SESSION['valid'])){
+if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola'])){
     if ($_POST['username'] == $USERNAME &&
         $_POST['parola'] == $PAROLA) {
         $_SESSION['username'] = $USERNAME;
@@ -24,7 +19,8 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 
     }else
         {
-          $user=$_POST['username'];
+            $conn=mysqli_connect('localhost',$user,$pass,$dbname);
+            $user=$_POST['username'];
             $sql ="SELECT * FROM conturi where username='$user'";
             $result = mysqli_query($conn,$sql);
 
@@ -49,7 +45,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 
 
     }
-
+    mysqli_close($conn);
 }
 
 ?>

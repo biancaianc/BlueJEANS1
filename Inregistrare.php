@@ -1,5 +1,29 @@
 <?php
 
+$pass = '';
+$dbname = 'restaurant';
+$user = 'root';
+$conn = mysqli_connect('localhost', $user, $pass, $dbname);
+if (isset($_POST['trimite'])) {
+    $username= $_POST['username'];
+    $parola=$_POST['parola'];
+    $numar_telefon=$_POST['numar_telefon'];
+    $sql = "SELECT * FROM conturi where username='$username'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $resultCheck=mysqli_num_rows($result);
+    if ( $resultCheck==0) {
+        $query = "insert into conturi(username,parola,numar_telefon) values(' $username ','$parola','$numar_telefon')";
+        mysqli_query($conn, $query);
+
+    }
+    else echo "Acest username exista";
+    mysqli_close($conn);
+}
+
+
+header('Inregistrare.php');
+
 
 ?>
 <html>

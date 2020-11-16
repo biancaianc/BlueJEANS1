@@ -43,7 +43,7 @@ mysqli_close($conn);
     <!-- Header -->
     <div id="header" class="skel-panels-fixed">
         <div id="logo">
-            <h1><a href="Evenimente-speciale_vizitator.php">Back</a></h1>
+            <h1><a href="Evenimente-speciale_client.php">Back</a></h1>
         </div>
     </div>
 

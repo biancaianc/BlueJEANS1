@@ -10,8 +10,8 @@ $id = $_GET['id']; // $id is now defined
 // or assuming your column is indeed an int
 // $id = (int)$_GET['id'];
 
-mysqli_query($conn,"DELETE FROM evenimente WHERE id='".$id."'");
-mysqli_query($conn,"DELETE FROM cereri_evenimente WHERE id_eveniment='".$id."'");
+mysqli_query($conn,"DELETE FROM comenzi WHERE id='".$id."'");
+
 mysqli_close($conn);
-header("Location: Evenimente-speciale_admin.php");
+header("Location:   Cos_client.php");
 ?>

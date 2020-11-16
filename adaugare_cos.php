@@ -9,8 +9,6 @@ if(!isset($_SESSION['logged-in']) ) $username=$_SESSION["username"];
 $sql ="SELECT * FROM conturi where username='$username'";
 $result = mysqli_query($conn,$sql);
 
-
-
 $row=mysqli_fetch_assoc($result);
 
 $query = "insert into comenzi(id_client,id_produs) values('".$row['id']."','".$id_produs."')";
