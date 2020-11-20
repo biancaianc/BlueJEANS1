@@ -101,7 +101,7 @@
                                         echo $row['descriere'];
 
                                         echo"</p>
-                                    <a href='#' class='button'>Edit</a>
+                                    <a href=\"edit_mancare.php?id=".$row['id']."\" class='button'>Edit</a>
                                    
                                    <a href=\"delete_mancare.php?id=".$row['id']."\" class='button'>Delete</a>
                             </section>";

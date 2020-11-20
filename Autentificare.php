@@ -98,7 +98,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 
 					<div id="banner" class="container">
 						<section>
-							<p>Autentificare administrator</p>
+							<p>Autentificare administrator/client</p>
 						</section>
 					</div>
       <form action="" method="post">
