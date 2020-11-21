@@ -44,7 +44,7 @@ session_start();
                 <li class="active"><a href="Meniu_client.php">Meniu</a></li>
                 <li><a href="Evenimente-speciale_client.php">Evenimente speciale</a></li>
                 <li><a href="Contact_client.html">Contact</a></li>
-                <li><a href="Parerea-dumnevoastra_client.html">Părerea dumneavoastră</a></li>
+                <li><a href="Parere_client.php">Pareri</a></li>
                 <li><a href="Cos_client.php">Cos</a></li>
                 <li><a href="Logout_client.html">Logout</a></li>
 

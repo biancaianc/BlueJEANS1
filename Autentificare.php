@@ -19,19 +19,18 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 
     }else
         {
-            $conn=mysqli_connect('localhost',$user,$pass,$dbname);
-            $user=$_POST['username'];
-            $sql ="SELECT * FROM conturi where username='$user'";
+            $usern=$_POST['username'];
+            $sql ="SELECT * FROM conturi where username='$usern'";
             $result = mysqli_query($conn,$sql);
 
 
             $resultCheck=mysqli_num_rows($result);
 
-            if($resultCheck>0) {
+            if($resultCheck==1) {
                 $row = mysqli_fetch_assoc($result);
                 $hash=password_hash($row['parola'],PASSWORD_DEFAULT);
                 if (password_verify($_POST['parola'],$hash)) {
-                    $_SESSION["username"] = $user;
+                    $_SESSION["username"] = $usern;
                     $_SESSION["id_client"]=$row['id'];
                     $_SESSION["logged_in"] = true;
                     header('Location:Meniu_client.php');
@@ -87,7 +86,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 								<li class="active"><a href="index.php">Meniu</a></li>
 								<li><a href="Evenimente-speciale_vizitator.php">Evenimente speciale</a></li>
 								<li><a href="Contact_vizitator.html">Contact</a></li>
-								<li><a href="Parereri.html">Păreri</a></li>
+								<li><a href="Parere_vizitator.php">Pareri</a></li>
 								<li><a href="Autentificare.php">Autentificare</a></li>
 							</ul>
 						</nav>
@@ -102,9 +101,9 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
 						</section>
 					</div>
       <form action="" method="post">
-      <font size="6" color=white><strong>Username</strong><br><input name="username" type="text" placeholder="Username..."  size="25" required><br></font>
-      <font size="6" color=white><strong>Parola</strong><br><input name="parola" type="password" placeholder="Parola..." size="25" required><br></font>
-		  <br> <a  color=white href="Inregistrare.php">Inregistrare</a><br><br><br>
+      <font size="6" color=white><strong>Username</strong><br><br><input name="username" type="text" placeholder="Username..."  size="25" required><br></font>
+      <font size="6" color=white><strong>Parola</strong><br><br><input name="parola" type="password" placeholder="Parola..." size="25" required><br></font>
+		  <br> <a size="6" color=white href="Inregistrare.php" size="50">Inregistrare</a><br><br><br>
      <input font size="6" color=00000  name="login" type="submit" value="login"></font>
 
 </form> 

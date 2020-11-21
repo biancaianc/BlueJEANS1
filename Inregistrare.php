@@ -13,7 +13,7 @@ if (isset($_POST['trimite'])) {
     $row = mysqli_fetch_assoc($result);
     $resultCheck=mysqli_num_rows($result);
     if ( $resultCheck==0) {
-        $query = "insert into conturi(username,parola,numar_telefon) values(' $username ','$parola','$numar_telefon')";
+        $query = "insert into conturi (username,parola,numar_telefon) values('$username ','$parola','$numar_telefon')";
         mysqli_query($conn, $query);
 
     }
@@ -67,9 +67,9 @@ header('Inregistrare.php');
         </section>
     </div>
     <form action="" method="post" >
-        <font size="6" color=white><strong>Username<br></strong><br><input name="username" type="text" placeholder="nume..."  size="25" required><br><br></font>
+        <font size="6" color=white><strong>Username<br></strong><br><input name="username" type="text" placeholder="nume..." size="25" required><br><br></font>
         <font size="6" color=white><strong>Parola<br></strong><br><input name="parola" type="password" size="50" required><br><br><br></font>
-        <font size="6" color=white><strong>Numar_telefon<br></strong><br><input name="numar_telefon" type="text"  size="25" required><br></font>
+        <font size="6" color=white><strong>Numar_telefon<br></strong><br><input name="numar_telefon" type="text" size="25" required><br></font>
         <br>
         <input font size="6" color=00000  name="trimite" type="submit" value="Inregistrare"></font>
     </form>
