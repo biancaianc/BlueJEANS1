@@ -63,7 +63,7 @@ $conn=mysqli_connect('localhost',$user,$pass,$dbname);
     </style>
 <table>
 <tr>
-    <th>Id</th>
+    <th>Numar_cerere</th>
     <th>Id_eveniment</th>
     <th>Nume_client</th>
     <th>Numar_locuri</th>
@@ -72,7 +72,7 @@ $conn=mysqli_connect('localhost',$user,$pass,$dbname);
 </tr>
 
     <?php
-$sql="SELECT id, id_eveniment, nume, numar_locuri, numar_telefon from cereri_evenimente";
+    $sql="SELECT id, id_eveniment, nume, numar_locuri, numar_telefon from cereri_evenimente";
     $result = mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
 
@@ -84,6 +84,30 @@ $sql="SELECT id, id_eveniment, nume, numar_locuri, numar_telefon from cereri_eve
 
 ?>
 </table>
+    <br><br>
+    <table>
+        <tr>
+            <th>Cod_eveniment</th>
+            <th>Nume_eveniment</th>
+            <th>Locuri_ramase</th>
+
+        </tr>
+<div>
+    <?php
+        $sql="SELECT id, denumire, numar_locuri from evenimente";
+        $result = mysqli_query($conn,$sql);
+        $resultCheck=mysqli_num_rows($result);
+
+        if($resultCheck>0)
+
+            while($row=mysqli_fetch_assoc($result)) {
+
+                echo" <tr><td>".$row["id"]."</td><td>".$row["denumire"]."</td><td>".$row["numar_locuri"]."";
+            }
+
+    ?>
+</table>
 </div>
+
 </body>
 </html>
