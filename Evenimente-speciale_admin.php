@@ -111,7 +111,7 @@ include_once 'Conectare_baza_de_date.php';
                             echo"</p><p>Numar locuri disponibile: ";
                             echo $row['numar_locuri'];
                             echo "<a href=\"delete_evenimente.php?id=".$row['id']."\" class='button'>Delete</a>
-    
+      
 
 
                 </section>";
