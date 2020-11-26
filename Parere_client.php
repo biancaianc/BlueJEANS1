@@ -61,6 +61,7 @@ if (isset($_POST['trimite'])&&isset($_POST['comentariu'])){
                 <li><a href="Evenimente-speciale_client.php">Evenimente speciale</a></li>
                 <li><a href="Contact_client.html">Contact</a></li>
                 <li><a href="Parere_client.php">Păreri</a></li>
+                <li><a href="Cos_client.php">Cos</a></li>
                 <li><a href="Logout_client.html">Logout</a></li>
             </ul>
         </nav>
@@ -74,25 +75,66 @@ if (isset($_POST['trimite'])&&isset($_POST['comentariu'])){
             <p><?php echo $username; ?>, poți scrie un comentariu!</p>
         </section>
     </div>
-    <form action="" method="post" >
-        <font size="6" color=white><strong>Comentariu<br></strong><br><input name="comentariu" type="text" placeholder="introdu parerea ta..."  size="25" required><br><br></font>
 
-        <input font size="6" color=00000  name="trimite" type="submit" value="trimite"></font>
-    </form>
+
+
+
     <div id="extra">
         <div class="container">
-            <div class='row no-collapse-1'>
 
-                <section class='4u'>
+                <?php
+                $sql ="SELECT * FROM pareri";
+                $result = mysqli_query($conn,$sql);
+                $resultCheck=mysqli_num_rows($result);
+                $i=0;
 
-                </section>
+                if($resultCheck>0)
+                while($row=mysqli_fetch_assoc($result)) {
 
-               
-            </div>
+                    echo "<div  style='  width: 1200px;
+                                                          padding: 10px;
+                                                          border: 5px solid black;
+                                                          margin: 5px; 
+                                                          align-content: center;
+                                                          background-color: lightskyblue'>";
+
+
+                    echo"
+                    <section  > 
+                    <span style='color: white' >Nume:";
+                    $id_client=$row["id_client"];
+                    $sql1 ="SELECT username FROM conturi where id='$id_client'";
+                    $result1 = mysqli_query($conn,$sql1);
+                    $resultCheck1=mysqli_num_rows($result1);
+
+                    if($resultCheck1==1){
+                        $row1=mysqli_fetch_assoc($result1);
+
+                        echo $row1["username"];  }
+                    echo"  </span><br>  Data:";
+                    echo $row['data'];
+
+                    echo" <br><br>
+                    <span style='color: black' ><strong>"; echo $row['comentariu']; echo"</strong></span>
+                    </section></div>";
+
+                }
+
+                ?>
+
         </div>
-    </div>
+
+            </div>
 
 
+
+
+<br><br>
+<form action="" method="post" >
+    <font size="6" color=white><strong>Adaugă comentariu<br></strong><br><input name="comentariu" type="text" placeholder="introdu parerea ta..."  size="25" required><br><br></font>
+
+    <input font size="6" color=00000  name="trimite" type="submit" value="trimite"></font>
+</form>
 </div>
 </body>
 </html>
