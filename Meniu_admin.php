@@ -4,6 +4,13 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
+<?php
+$pass='';
+$dbname='restaurant';
+
+$user='root';
+$conn=mysqli_connect('localhost',$user,$pass,$dbname);
+?>
 <html>
 	<head>
 		<title>Restaurant BlueJEANS</title>
@@ -58,6 +65,49 @@
                     <input font size="6" color=00000  name="adauga" type="submit" value="ADAUGA"></font>
                 </form>
                 <br><br>
+
+                <div id="extra">
+                    <div class="container">
+                        <div class='row no-collapse-1'>
+                            <?php
+                            $sql ="SELECT * FROM meniul_zilei";
+                            $result = mysqli_query($conn,$sql);
+                            $resultCheck=mysqli_num_rows($result);
+                            $i=0;
+
+                            if($resultCheck>0)
+                                $row=mysqli_fetch_assoc($result);
+                            $image = $row['poza'];
+                            $image_src = "upload/".$image;
+                            ?>
+
+
+                            <section class='4u'> <a href='#' class='image featured'><img src='<?php echo $image_src ?>' height="248px">
+                                </a>
+
+                            </section>
+                            <div style="height: 248px; width: 415px; background-color: floralwhite">
+                                <strong>MENIUL ZILEI</strong><br><br>
+                                <?php
+                                echo $row['denumire'];
+                                echo"<br><br>";
+                                echo $row['descriere'];
+                                echo"<br><br><strong>Pret: ";
+                                echo $row['pret'];
+                                echo" lei</strong>";
+                                $id=$row['id'];
+                                echo"
+                    <br>
+                    <a href=\"schimba_meniul_zilei.php?id=".$id."\" class='button'>Schimba</a>";
+                                ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+
+
                 <div id="extra">
                     <div class="container">
                         <div class='row no-collapse-1'>

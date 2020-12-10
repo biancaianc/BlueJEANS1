@@ -110,7 +110,8 @@ include_once 'Conectare_baza_de_date.php';
                              Data:"; echo  $row['data'];
                             echo"</p><p>Numar locuri disponibile: ";
                             echo $row['numar_locuri'];
-                            echo "<a href=\"delete_evenimente.php?id=".$row['id']."\" class='button'>Delete</a>
+
+                            echo "<br><a href=\"delete_evenimente.php?id=".$row['id']."\" class='button'>Delete</a>
       
 
 

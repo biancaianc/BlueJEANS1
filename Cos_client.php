@@ -88,18 +88,38 @@ $conn=mysqli_connect('localhost',$user,$pass,$dbname);
                 $id_produs=$row["id_produs"];
                 $sql="SELECT * from meniu1 where id='$id_produs'";
                 $result1 = mysqli_query($conn,$sql);
-                $row1=mysqli_fetch_assoc($result1);
-                if($row1!=NULL){
-                $total=$total+$row1["pret"];
-                echo" <tr align='center'><td>".$row1["denumire"]."</td><td>".$row1["pret"]."</td><td>   <a button href=\"delete_cos.php?id=".$row['id']."\" style='color: black'>Sterge</button></a></td></tr> "; }
+
+                $resultCheck1=mysqli_num_rows($result1);
+                if($resultCheck1==1){
+                    $row1=mysqli_fetch_assoc($result1);
+                    $total=$total+$row1["pret"];
+                    echo" <tr align='center'><td>".$row1["denumire"]."</td><td>".$row1["pret"]."</td><td>   <a button href=\"delete_cos.php?id=".$row['id']."\" style='color: black'>Sterge</button></a></td></tr> ";
+                }
+                    else if($resultCheck1==0){
+                        $sql2 = "SELECT * from meniul_zilei where id='$id_produs'";
+                        $result2 = mysqli_query($conn, $sql2);
+
+                        $resultCheck2=mysqli_num_rows($result2);
+                        if($resultCheck2==1){
+                            $row2 = mysqli_fetch_assoc($result2);
+                            $total = $total + $row2["pret"];
+                            echo " <tr align='center'><td>" . $row2["denumire"] . "</td><td>" . $row2["pret"] . "</td><td>   <a button href=\"delete_cos.php?id=" . $row2['id'] . "\" style='color: black'>Sterge</button></a></td></tr> ";
+                        }
+                     }
             }
 
         ?>
 
     </table>
+
         <div style=" background-color: #d84780; align-content: center; width:150px ; font-size: xx-large"> <br></br>Total<br><p ><strong><?php echo $total ?></strong></p></div>
 
+
+
+
+
     <div>
+
     <font size="6" color=white ><strong>Adresa</strong><br><br><input style="width:50%" name="denumire" type="text" placeholder="adresa..."  size="25" required><br></font>
         <font size="6" color=white><strong>Mentiuni*</strong><br><br><input style="width:50%" name="denumire" type="text" placeholder="adaugati mentiuni..."  size="25" ><br></font>
     <br>

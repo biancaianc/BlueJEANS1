@@ -15,6 +15,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
         $_POST['parola'] == $PAROLA) {
         $_SESSION['username'] = $USERNAME;
         $_SESSION["logged_in"] = true;
+
         header('Location:Meniu_admin.php');
 
     }else
@@ -27,6 +28,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['parola
             $resultCheck=mysqli_num_rows($result);
 
             if($resultCheck==1) {
+
                 $row = mysqli_fetch_assoc($result);
                 $hash=password_hash($row['parola'],PASSWORD_DEFAULT);
                 if (password_verify($_POST['parola'],$hash)) {
