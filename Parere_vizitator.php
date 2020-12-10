@@ -39,7 +39,7 @@ $user='root'; $conn=mysqli_connect('localhost',$user,$pass,$dbname);
     <!-- Header -->
     <div id="header" class="skel-panels-fixed">
         <div id="logo">
-            <h1><a href="Meniu_client.php">BlueJEANS</a></h1>
+            <h1><a href="index.php">BlueJEANS</a></h1>
 
         </div>
         <nav id="nav">

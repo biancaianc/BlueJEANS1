@@ -14,6 +14,7 @@ if (isset($_POST['salveaza']) && isset($_FILES['file'])) {
     $name = $_FILES['file']['name'];
     $denumire = $_POST['denumire'];
     $descriere = $_POST['descriere'];
+    $pret=$_POST['pret'];
     $target_dir = "upload/";
     $target_file = $target_dir . basename($_FILES['file']['name']);
 // Select file type
@@ -28,7 +29,7 @@ if (isset($_POST['salveaza']) && isset($_FILES['file'])) {
 
         // Insert record
 
-        $sql="UPDATE meniu SET denumire='$denumire', descriere='$descriere', poza='$name' where id='$id'";
+        $sql="UPDATE meniu1 SET denumire='$denumire', descriere='$descriere', poza='$name', pret='$pret' where id='$id'";
         if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
         } else {
@@ -50,7 +51,8 @@ if (isset($_POST['salveaza']) && isset($_FILES['file'])) {
 else if(isset($_POST['salveaza']) && empty($_FILES['file'])){
     $denumire = $_POST['denumire'];
     $descriere = $_POST['descriere'];
-    $sql="UPDATE meniu SET denumire='$denumire', descriere='$descriere' where id='$id'";
+    $pret= $_POST['pret'];
+    $sql="UPDATE meniu1 SET denumire='$denumire', descriere='$descriere' , pret='$pret' where id='$id'";
     if (mysqli_query($conn, $sql)) {
         echo "Record updated successfully '$denumire'";
     } else {
@@ -115,7 +117,7 @@ else if(isset($_POST['salveaza']) && empty($_FILES['file'])){
 
      $id = $_GET['id']; // $id is now defined
 
-     $sql ="SELECT * FROM meniu where id='$id'";
+     $sql ="SELECT * FROM meniu1 where id='$id'";
         $result = mysqli_query($conn,$sql);
         $resultCheck=mysqli_num_rows($result);
          if($resultCheck>0)
@@ -125,6 +127,7 @@ else if(isset($_POST['salveaza']) && empty($_FILES['file'])){
      ?>
         <font size="6" color=white><strong>Denumire</strong><br><br><input name="denumire" type="text" value="<?php echo $row['denumire']?>" size="25"><br><br></font>
         <font size="6" color=white><strong>Descriere</strong><br><br><input name="descriere" type="text" value="<?php echo $row['descriere']?>" size="25"><br><br></font><br>
+        <font size="6" color=white><strong>Pret</strong><br><br><input name="pret" type="float" value="<?php echo $row['pret']?>" size="25"><br><br></font><br>
         <?php
         $image = $row['poza'];
         $image_src = "upload/".$image;

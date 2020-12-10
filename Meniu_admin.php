@@ -72,7 +72,7 @@
                             $conn=mysqli_connect('localhost',$user,$pass,$dbname);
 
 
-                $sql ="SELECT * FROM meniu";
+                $sql ="SELECT * FROM meniu1";
                 $result = mysqli_query($conn,$sql);
                 $resultCheck=mysqli_num_rows($result);
                 $i=0;
@@ -99,8 +99,11 @@
                                     <p>
                                         ";
                                         echo $row['descriere'];
+                                 echo"<br>Pret: ";
+                                 echo $row['pret'];
 
-                                        echo"</p>
+                                 echo" lei</p>
+                                        
                                     <a href=\"edit_mancare.php?id=".$row['id']."\" class='button'>Edit</a>
                                    
                                    <a href=\"delete_mancare.php?id=".$row['id']."\" class='button'>Delete</a>

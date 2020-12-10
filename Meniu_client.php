@@ -64,7 +64,7 @@ session_start();
         <div class="container">
             <div class='row no-collapse-1'>
                 <?php
-                $sql ="SELECT * FROM meniu";
+                $sql ="SELECT * FROM meniu1";
                 $result = mysqli_query($conn,$sql);
                 $resultCheck=mysqli_num_rows($result);
                 $i=0;
@@ -91,8 +91,12 @@ session_start();
                                   <p>
                                             ";
                             echo $row['descriere'];
+                            echo"<br>Pret: ";
+                            echo $row['pret'];
 
-                            echo"</p>
+                            echo" lei</p>
+
+                          
                                    
                             <a href=\"adaugare_cos.php?id=".$row['id']."\" class='button'>Adauga in cos</a><div>";
 

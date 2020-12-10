@@ -4,10 +4,11 @@ $dbname='restaurant';
 
 $user='root';$conn=mysqli_connect('localhost',$user,$pass,$dbname);
 
-if (isset($_POST['adauga'])&&(isset($_FILES['file'])) &&isset($_POST['denumire'])&&isset($_POST['descriere'])){
+if (isset($_POST['adauga'])&&(isset($_FILES['file'])) &&isset($_POST['denumire'])&&isset($_POST['descriere']) &&isset($_POST['pret'])){
     $name=$_FILES['file']['name'];
     $denumire=$_POST['denumire'];
     $descriere=$_POST['descriere'];
+    $pret =$_POST['pret'];
     $target_dir = "upload/";
     $target_file=$target_dir . basename($_FILES['file']['name']);
     // Select file type
@@ -20,7 +21,7 @@ if (isset($_POST['adauga'])&&(isset($_FILES['file'])) &&isset($_POST['denumire']
     if( in_array($imageFileType,$extensions_arr) ){
 
         // Insert record
-        $query = "insert into meniu(poza, denumire, descriere) values('".$name."','$denumire','$descriere')";
+        $query = "insert into meniu1(poza, denumire, descriere, pret) values('".$name."','$denumire','$descriere','$pret')";
         mysqli_query($conn,$query);
 
         // Upload file
@@ -86,6 +87,7 @@ if (isset($_POST['adauga'])&&(isset($_FILES['file'])) &&isset($_POST['denumire']
             <form action="" method="post" enctype='multipart/form-data'>
                 <font size="6" color=white><strong>Denumire</strong><br><input name="denumire" type="text" placeholder="denumire..."  size="25" required><br></font>
                 <font size="6" color=white><strong>Descriere</strong><br><input name="descriere" type="text" placeholder="descriere..." size="50" required><br></font>
+                <font size="6" color=white><strong>Pret</strong><br><input name="pret" type="float" placeholder="" size="50" required><br><br></font>
                 <font size="6" color=white><strong>Imagine</strong><br><br><input name="file" type="file"  size="25" required><br></font>
                 <br>
                 <input font size="6" color=00000  name="adauga" type="submit" value="adauga"></font>
