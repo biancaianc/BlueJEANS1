@@ -13,9 +13,8 @@ if (isset($_POST['trimite'])) {
     $row = mysqli_fetch_assoc($result);
     $resultCheck=mysqli_num_rows($result);
     if ( $resultCheck==0) {
-        $query = "insert into conturi (username,parola,numar_telefon) values('$username ','$parola','$numar_telefon')";
+        $query = "insert into conturi (username,parola,numar_telefon,numar_comenzi) values('$username ','$parola','$numar_telefon',0)";
         mysqli_query($conn, $query);
-
     }
     else echo "Acest username exista";
     mysqli_close($conn);
