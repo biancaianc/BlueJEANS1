@@ -62,7 +62,7 @@ if (isset($_POST['trimite'])&&isset($_POST['comentariu'])){
                 <li><a href="Contact_client.html">Contact</a></li>
                 <li><a href="Parere_client.php">Păreri</a></li>
                 <li><a href="Cos_client.php">Cos</a></li>
-                <li><a href="Comenzi.php">Comenzi</a></li>
+                <li><a href="Comenzi_client.php">Comenzi</a></li>
                 <li><a href="Logout_client.html">Logout</a></li>
             </ul>
         </nav>

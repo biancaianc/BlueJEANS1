@@ -48,6 +48,7 @@ $user='root'; $conn=mysqli_connect('localhost',$user,$pass,$dbname);
                 <li><a href="Evenimente-speciale_admin.php">Evenimente speciale</a></li>
                 <li><a href="Contact_admin.html">Contact</a></li>
                 <li><a href="Parere_admin.php">Păreri</a></li>
+                <li><a href="Comenzi_admin.php">Comenzi</a></li>
                 <li><a href="Logout_admin.html">Logout</a></li>
             </ul>
         </nav>

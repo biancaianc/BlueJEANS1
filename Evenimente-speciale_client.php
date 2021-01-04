@@ -52,7 +52,7 @@ $conn=mysqli_connect('localhost',$user,$pass,$dbname);
                 <li><a href="Contact_client.html">Contact</a></li>
                 <li><a href="Parere_client.php">Pareri</a></li>
                 <li><a href="Cos_client.php">Cos</a></li>
-                <li><a href="Comenzi.php">Comenzi</a></li>
+                <li><a href="Comenzi_client.php">Comenzi</a></li>
                 <li><a href="Logout_client.html">Logout</a></li>
             </ul>
         </nav>

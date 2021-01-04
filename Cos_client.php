@@ -20,6 +20,10 @@ if (isset($_POST['adresa'])) {
 
 
     $id_client=$_SESSION['id_client'];
+
+    $query = "insert into comenzi_livrate(id_client, numar_comanda, livrat) values('".$id_client."','".$numar_comenzi."',false)";
+    mysqli_query($conn,$query);
+
     $sql="SELECT * from comenzi where id_client='$id_client'";
     $result = mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
@@ -104,7 +108,7 @@ if (isset($_POST['adresa'])) {
                 <li><a href="Contact_client.html">Contact</a></li>
                 <li><a href="Parere_client.php">Pareri</a></li>
                 <li><a href="Cos_client.php">Cos</a></li>
-                <li><a href="Comenzi.php">Comenzi</a></li>
+                <li><a href="Comenzi_client.php">Comenzi</a></li>
                 <li><a href="Logout_client.html">Logout</a></li>
             </ul>
         </nav>
